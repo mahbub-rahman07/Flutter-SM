@@ -10,27 +10,26 @@ This project is a simple TODO application built with Flutter, demonstrating best
 - Clean separation of presentation, domain, and data layers
 
 ## Project Structure
-```
+```plaintext
 lib/
-  example_bloc/
-    core/
-      app_bloc_observer.dart      # BLoC observer for debugging
-      app_lifecycle_handler.dart  # App lifecycle management
-      di.dart                    # Dependency injection setup
-    feature/
-      todo/
-        data/
-          models/                # Data models
-          repository/            # Repository implementation
-        domain/
-          entities/              # Entity definitions
-          repositories/          # Repository contracts
-          usecases/              # Business logic (use cases)
-        presentation/
-          bloc/                  # BLoC, events, states
-          view/                  # UI screens
-  main.dart                      # App entry point
-```
+└── example_bloc/
+    ├── core/
+    │   ├── app_bloc_observer.dart        # BLoC observer for debugging
+    │   ├── app_lifecycle_handler.dart    # App lifecycle management
+    │   └── di.dart                       # Dependency injection setup
+    └── feature/
+        └── todo/
+            ├── data/
+            │   ├── models/               # Data models
+            │   └── repository/           # Repository implementation
+            ├── domain/
+            │   ├── entities/             # Entity definitions
+            │   ├── repositories/         # Repository contracts
+            │   └── usecases/             # Business logic (use cases)
+            └── presentation/
+                ├── bloc/                 # BLoC, events, states
+                └── view/                 # UI screens
+main.dart                                 # App entry point
 
 ## How It Works
 - **State Management:** Uses the BLoC pattern (`flutter_bloc`) to manage UI state and business logic.
