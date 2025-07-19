@@ -30,7 +30,7 @@ lib/
                 ├── bloc/                 # BLoC, events, states
                 └── view/                 # UI screens
 main.dart                                 # App entry point
-
+```
 ## How It Works
 - **State Management:** Uses the BLoC pattern (`flutter_bloc`) to manage UI state and business logic.
 - **Dependency Injection:** All dependencies (repositories, use cases, BLoC) are registered in `core/di.dart` using `get_it`.
