@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../entities /todo.dart';
+import '../entities/todo.dart';
 
 abstract class TodoRepository {
   /// Fetches all todos.

@@ -1,6 +1,6 @@
 
 
-import '../../domain/entities /todo.dart';
+import '../../domain/entities/todo.dart';
 import '../../domain/repositories/todo_repository.dart';
 
 class TodoRepositoryImpl extends TodoRepository {

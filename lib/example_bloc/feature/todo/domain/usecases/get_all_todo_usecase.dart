@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../entities /todo.dart';
+import '../entities/todo.dart';
 import '../repositories/todo_repository.dart';
 
 class GetAllTodoUseCase {

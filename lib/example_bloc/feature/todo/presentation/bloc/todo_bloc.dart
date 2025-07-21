@@ -1,11 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
-import 'package:state_management/example_bloc/feature/todo/data/models/todo_model.dart';
 import 'package:state_management/example_bloc/feature/todo/domain/usecases/add_todo_usecase.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../domain/entities /todo.dart';
+import '../../domain/entities/todo.dart';
 import '../../domain/usecases/delete_todo_usecase.dart';
 import '../../domain/usecases/get_all_todo_usecase.dart';
 import '../../domain/usecases/update_todo_usecase.dart';
