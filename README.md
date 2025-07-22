@@ -26,9 +26,12 @@ lib/
             │   ├── entities/             # Entity definitions
             │   ├── repositories/         # Repository contracts
             │   └── usecases/             # Business logic (use cases)
-            └── presentation/
-                ├── bloc/                 # BLoC, events, states
-                └── view/                 # UI screens
+            ├── presentation_with_bloc/
+            │   ├── bloc/                 # BLoC, events, states
+            │   └── view/                 # BLoC UI screens
+            └── presentation_with_getx/
+                ├── controller/           # GetX controller
+                └── view/                 # GetX UI screens
 main.dart                                 # App entry point
 ```
 ## How It Works
