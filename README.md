@@ -12,7 +12,7 @@ This project is a simple TODO application built with Flutter, demonstrating best
 ## Project Structure
 ```plaintext
 lib/
-└── example_bloc/
+└── example_ca/
     ├── core/
     │   ├── app_bloc_observer.dart        # BLoC observer for debugging
     │   ├── app_lifecycle_handler.dart    # App lifecycle management
@@ -71,12 +71,26 @@ main.dart                                 # App entry point
 - Dependency injection ensures loose coupling and testability.
 - The UI is reactive and updates automatically based on BLoC state.
 
+## Bloc State Management
+The app demonstrates the use of the BLoC pattern for state management in the `lib/example_ca/feature/todo/presentation_with_bloc/` directory. The main BLoC implementation is in [`todo_bloc.dart`](lib/example_ca/feature/todo/presentation_with_bloc/bloc/todo_bloc.dart), which handles all TODO-related events and state transitions. The UI for the BLoC approach is in [`todo_screen.dart`](lib/example_ca/feature/todo/presentation_with_bloc/view/todo_screen.dart), where a `BlocProvider` and `BlocBuilder` are used to manage and react to state changes.
+
+**Entry point:**
+- `TodoScreen` widget: `lib/example_ca/feature/todo/presentation_with_bloc/view/todo_screen.dart`
+- BLoC logic: `lib/example_ca/feature/todo/presentation_with_bloc/bloc/todo_bloc.dart`
+
+## GetX State Management
+In addition to BLoC, the project also demonstrates state management using GetX in the `lib/example_ca/feature/todo/presentation_with_getx/` directory. The main controller is [`todo_controller.dart`](lib/example_ca/feature/todo/presentation_with_getx/controller/todo_controller.dart), which manages the TODO list and exposes observable state. The UI for the GetX approach is in [`todo_getx_screen.dart`](lib/example_ca/feature/todo/presentation_with_getx/view/todo_getx_screen.dart), using `Obx` widgets to reactively update the UI based on state changes in the controller.
+
+**Entry point:**
+- `TodoGetxScreen` widget: `lib/example_ca/feature/todo/presentation_with_getx/view/todo_getx_screen.dart`
+- GetX logic: `lib/example_ca/feature/todo/presentation_with_getx/controller/todo_controller.dart`
+
 ## Folder Highlights
-- `lib/example_bloc/feature/todo/presentation/view/todo_screen.dart`: Main UI for the TODO app.
-- `lib/example_bloc/feature/todo/presentation/bloc/`: BLoC, events, and states.
-- `lib/example_bloc/feature/todo/domain/`: Entities, repositories, and use cases.
-- `lib/example_bloc/feature/todo/data/`: Repository implementation and models.
-- `lib/example_bloc/core/di.dart`: Dependency injection setup.
+- `lib/example_ca/feature/todo/presentation/view/todo_screen.dart`: Main UI for the TODO app.
+- `lib/example_ca/feature/todo/presentation/bloc/`: BLoC, events, and states.
+- `lib/example_ca/feature/todo/domain/`: Entities, repositories, and use cases.
+- `lib/example_ca/feature/todo/data/`: Repository implementation and models.
+- `lib/example_ca/core/di.dart`: Dependency injection setup.
 - `lib/main.dart`: App entry point and BLoC observer setup.
 
 ## License

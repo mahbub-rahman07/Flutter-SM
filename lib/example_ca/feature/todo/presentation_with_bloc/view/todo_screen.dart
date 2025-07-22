@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
-import 'package:state_management/example_bloc/core/di.dart';
+import 'package:state_management/example_ca/core/di.dart';
 import '../../../../core/app_lifecycle_handler.dart';
 import '../bloc/todo_bloc.dart';
 
@@ -31,7 +31,9 @@ class TodoScreen extends StatelessWidget {
                       IconButton(
                         icon: Icon(Icons.add),
                         onPressed: () {
-                          context.read<TodoBloc>().add(AddTodoEvent(controller.text));
+                          context.read<TodoBloc>().add(
+                            AddTodoEvent(controller.text),
+                          );
                           controller.clear();
                         },
                       ),
@@ -39,29 +41,38 @@ class TodoScreen extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-
                   child: context.watch<TodoBloc>().state is TodoLoadingState
                       ? Center(child: CircularProgressIndicator())
                       : ListView.builder(
-                          itemCount: context.watch<TodoBloc>().state.todos.length,
+                          itemCount: context
+                              .watch<TodoBloc>()
+                              .state
+                              .todos
+                              .length,
                           itemBuilder: (context, index) {
-                            final todo = context.watch<TodoBloc>().state.todos[index];
+                            final todo = context
+                                .watch<TodoBloc>()
+                                .state
+                                .todos[index];
                             return ListTile(
                               title: Text(todo.title),
                               subtitle: Text(todo.description),
                               trailing: IconButton(
                                 icon: Icon(Icons.delete),
                                 onPressed: () {
-                                  context.read<TodoBloc>().add(DeleteTodoEvent(todo.id));
+                                  context.read<TodoBloc>().add(
+                                    DeleteTodoEvent(todo.id),
+                                  );
                                 },
                               ),
                               onTap: () {
-                                // Handle todo update or toggle completion
-                                context.read<TodoBloc>().add(UpdateTodoEvent(todo));
+                                context.read<TodoBloc>().add(
+                                  UpdateTodoEvent(todo),
+                                );
                               },
                             );
                           },
-                ),
+                        ),
                 ),
               ],
             );

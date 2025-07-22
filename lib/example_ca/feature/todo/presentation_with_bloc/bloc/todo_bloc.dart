@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:state_management/example_bloc/feature/todo/domain/usecases/add_todo_usecase.dart';
+import 'package:state_management/example_ca/feature/todo/domain/usecases/add_todo_usecase.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../domain/entities/todo.dart';
