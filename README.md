@@ -1,4 +1,4 @@
-# Flutter TODO App – State Management Example
+# Flutter TODO App – State Management with Clean Architecture
 
 This project is a simple TODO application built with Flutter, demonstrating best practices in state management using the BLoC pattern, dependency injection, and clean architecture principles.
 
