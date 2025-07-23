@@ -2,6 +2,12 @@
 
 This project is a simple TODO application built with Flutter, demonstrating best practices in state management using the BLoC pattern, dependency injection, and clean architecture principles.
 
+## Overview what state management is used
+-  Bloc
+- GetX
+- Riverpod
+- with clean architecture
+
 ## Features
 - Add, update, and delete TODO items
 - State management with BLoC (`flutter_bloc`)
