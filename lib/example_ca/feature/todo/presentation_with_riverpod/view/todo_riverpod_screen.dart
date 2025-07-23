@@ -42,8 +42,24 @@ class TodoReiverpodScreen extends ConsumerWidget {
                     itemBuilder: (context, index) {
                       final todo = state.todos[index];
                       return ListTile(
-                        title: Text(todo.title),
-                        subtitle: Text(todo.description),
+                        key: Key(todo.id),
+                        title: Text(
+                          todo.title,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            decoration: todo.isCompleted
+                                ? TextDecoration.lineThrough
+                                : TextDecoration.none,
+                          ),
+                        ),
+                        leading: Checkbox(
+                          value: todo.isCompleted,
+                          onChanged: (value) {
+                            ref
+                                .read(todoListProvider.notifier)
+                                .updateTodoItem(todo);
+                          },
+                        ),
                         trailing: IconButton(
                           icon: Icon(Icons.delete),
                           onPressed: () {
@@ -52,11 +68,6 @@ class TodoReiverpodScreen extends ConsumerWidget {
                                 .deleteTodoItem(todo.id);
                           },
                         ),
-                        onTap: () {
-                          ref
-                              .read(todoListProvider.notifier)
-                              .updateTodoItem(todo);
-                        },
                       );
                     },
                   ),
