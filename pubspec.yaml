@@ -21,6 +21,7 @@ dependencies:
   freezed_annotation: ^2.4.1
   json_serializable: ^6.9.5
   equatable: ^2.0.7
+  flutter_riverpod: ^2.6.1
 
 dev_dependencies:
   flutter_test:

@@ -1,3 +1,4 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get_it/get_it.dart';
@@ -46,4 +47,7 @@ void init() {
 
   // App lifecycle handler
   Get.put(AppLifecycleHandler());
+
+
+
 }

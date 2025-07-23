@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
 import 'package:state_management/example_ca/feature/todo/presentation_with_getx/view/todo_getx_screen.dart';
+import 'package:state_management/example_ca/feature/todo/presentation_with_riverpod/view/todo_riverpod_screen.dart';
 
 import 'example_ca/core/app_bloc_observer.dart';
 import 'example_ca/core/di.dart';
@@ -11,7 +13,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   init();
   Bloc.observer = AppBlocObserver();
-  runApp(const MyApp());
+  runApp(ProviderScope(child: const MyApp()));
 }
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: TodoGetxScreen(),
+      home: TodoReiverpodScreen(),
     );
   }
 }

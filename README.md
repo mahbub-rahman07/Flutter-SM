@@ -29,9 +29,12 @@ lib/
             ├── presentation_with_bloc/
             │   ├── bloc/                 # BLoC, events, states
             │   └── view/                 # BLoC UI screens
-            └── presentation_with_getx/
-                ├── controller/           # GetX controller
-                └── view/                 # GetX UI screens
+            ├── presentation_with_getx/
+            │   ├── controller/           # GetX controller
+            │   └── view/                 # GetX UI screens
+            └── presentation_with_riverpod/
+                ├── provider/             # Riverpod StateNotifier and providers
+                └── view/                 # Riverpod UI screens
 main.dart                                 # App entry point
 ```
 ## How It Works
@@ -87,6 +90,20 @@ In addition to BLoC, the project also demonstrates state management using GetX i
 **Entry point:**
 - `TodoGetxScreen` widget: `lib/example_ca/feature/todo/presentation_with_getx/view/todo_getx_screen.dart`
 - GetX logic: `lib/example_ca/feature/todo/presentation_with_getx/controller/todo_controller.dart`
+
+## Riverpod State Management
+The project also demonstrates state management using Riverpod in the `lib/example_ca/feature/todo/presentation_with_riverpod/` directory. 
+
+Riverpod uses a `StateNotifier` (see [`todo_notifier.dart`](lib/example_ca/feature/todo/presentation_with_riverpod/provider/todo_notifier.dart)) to manage the TODO state, and a separate state class ([`todo_state.dart`](lib/example_ca/feature/todo/presentation_with_riverpod/provider/todo_state.dart)) to represent the current state of the TODO list. The notifier exposes methods for fetching, adding, updating, and deleting TODO items.
+
+Dependency injection is handled using Riverpod's built-in provider system. The `todoListProvider` is a `StateNotifierProvider` that injects all required use cases into the notifier, making it easy to manage dependencies and keep the code modular and testable.
+
+The UI for the Riverpod approach is in [`todo_riverpod_screen.dart`](lib/example_ca/feature/todo/presentation_with_riverpod/view/todo_riverpod_screen.dart), which uses a `ConsumerWidget` to watch the state and interact with the notifier. State changes are reflected reactively in the UI.
+
+**Entry point:**
+- `TodoReiverpodScreen` widget: `lib/example_ca/feature/todo/presentation_with_riverpod/view/todo_riverpod_screen.dart`
+- Riverpod logic: `lib/example_ca/feature/todo/presentation_with_riverpod/provider/todo_notifier.dart`
+- Riverpod state: `lib/example_ca/feature/todo/presentation_with_riverpod/provider/todo_state.dart`
 
 ## Folder Highlights
 - `lib/example_ca/feature/todo/presentation/view/todo_screen.dart`: Main UI for the TODO app.
